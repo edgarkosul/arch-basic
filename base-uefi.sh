@@ -3,7 +3,7 @@
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
 
-echo "LANG=ru_RU.UTF-8" >> /etc/locale.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=ru" >> /etc/vconsole.conf
 echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
@@ -35,11 +35,11 @@ systemctl enable libvirtd
 systemctl enable firewalld
 systemctl enable acpid
 
-useradd -m ermanno
+useradd -m edgar
 echo edgar:password | chpasswd
 usermod -aG wheel edgar
 
-echo "edgar ALL=(ALL) ALL" >> /etc/sudoers.d/edgar
+echo "edgar ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/edgar
 
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
