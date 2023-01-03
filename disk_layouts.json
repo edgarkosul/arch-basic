@@ -1,0 +1,25 @@
+{
+    "/dev/nvme0n1p4": {
+        "partitions": [
+            {
+                "btrfs": {
+                    "subvolumes": {
+                        "@.snapshots": "/.snapshots",
+                        "@home": "/home",
+                        "@log": "/var/log",
+                        "@pkgs": "/var/cache/pacman/pkg"
+                    }
+                },
+                "filesystem": {
+                    "format": "btrfs"
+                },
+                "format": true,
+                "mountpoint": "/",
+                "size": "100%",
+                "start": "1MB",
+                "type": "primary"
+            }
+        ],
+        "wipe": true
+    }
+}
