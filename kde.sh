@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sudo timedatectl set-ntp true
-sudo hwclock --systohc
 
 sudo reflector -c Finland -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 
@@ -9,8 +8,8 @@ sudo firewall-cmd --add-port=1025-65535/tcp --permanent
 sudo firewall-cmd --add-port=1025-65535/udp --permanent
 sudo firewall-cmd --reload
 
-git clone https://aur.archlinux.org/pikaur.git
-cd pikaur/
+git clone https://aur.archlinux.org/yay.git
+cd yay/
 makepkg -si --noconfirm
 
 #pikaur -S --noconfirm system76-power
