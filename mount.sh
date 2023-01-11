@@ -11,6 +11,7 @@ btrfs subvolume create @pkgs
 cd
 umount /mnt
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@.snapshots /dev/nvme0n1p4 /mnt/.snapshots
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@.snapshots /dev/nvme0n1p4 /mnt/.snapshots
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/nvme0n1p4 /mnt/home
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/nvme0n1p4 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkgs /dev/nvme0n1p4 /mnt/var/cache/pacman/pkg
