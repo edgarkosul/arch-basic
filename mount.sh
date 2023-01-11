@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkfs.btrfs -L "Arch Linux" /dev/nvme0n1p4
+mkfs.btrfs -f -L "Arch Linux" /dev/nvme0n1p4
 mount /dev/nvme0n1p4 /mnt
 cd /mnt
 btrfs subvolume create @
